@@ -1,0 +1,4 @@
+--Git--
+git clone [https://github.com/zhandos998/laravel_shop.git]
+git add [index.html]
+
