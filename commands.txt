@@ -5,6 +5,7 @@ git push
 
 --Composer--
 php composer.phar update
+php composer.phar global require laravel/installer 
 
 --Laravel--
 php artisan serve
