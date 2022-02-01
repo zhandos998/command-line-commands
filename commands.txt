@@ -1,4 +1,11 @@
 --Git--
 git clone [https://github.com/zhandos998/laravel_shop.git]
 git add [index.html]
+git push
+
+--Composer--
+php composer.phar update
+
+--Laravel--
+php artisan serve
 
