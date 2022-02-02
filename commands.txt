@@ -11,6 +11,7 @@ php composer.phar create-project --prefer-dist laravel/laravel shop
 
 --Laravel--
 php artisan serve
+
 php artisan ui bootstrap
 php artisan ui vue
 php artisan ui react
@@ -18,6 +19,10 @@ php artisan ui react
 php artisan ui bootstrap --auth
 php artisan ui vue --auth
 php artisan ui react --auth
+
+php artisan make:model Model -m
+
+php artisan migrate:fresh --seed
 
 --npm--
 npm install && npm run dev
