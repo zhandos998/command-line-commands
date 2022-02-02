@@ -4,14 +4,20 @@ git add [index.html]
 git push
 
 --Composer--
-php composer.phar update
+php composer.phar install
 php composer.phar global require laravel/installer
 php composer.phar require laravel/ui
 php composer.phar create-project --prefer-dist laravel/laravel shop
 
 --Laravel--
 php artisan serve
+php artisan ui bootstrap
+php artisan ui vue
+php artisan ui react
+
+php artisan ui bootstrap --auth
 php artisan ui vue --auth
+php artisan ui react --auth
 
 --npm--
 npm install && npm run dev
