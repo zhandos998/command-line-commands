@@ -6,8 +6,12 @@ git push
 --Composer--
 php composer.phar update
 php composer.phar global require laravel/installer
+php composer.phar require laravel/ui
 php composer.phar create-project --prefer-dist laravel/laravel shop
 
 --Laravel--
 php artisan serve
+php artisan ui vue --auth
 
+--npm--
+npm install && npm run dev
