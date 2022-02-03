@@ -1,0 +1,155 @@
+console.log(`${x} * ${y} = ${x*y}`)
+
+3---------------------------------------------------------------------------------
+
+module.export={
+array_counter : array_counter,
+multiply : multiply,
+some_value : some_value
+};
+
+4---------------------------------------------------------------------------------
+
+var events = require('events'); 
+var util = require('util'); 
+
+var Cars = function(model) {
+	this.model = model; }; 
+
+util.inherits(Cars, events.EventEmitter); 
+
+var bmw = new Cars('BMW'); 
+var audi = new Cars('Audi'); 
+var volvo = new Cars('Volvo'); 
+
+var cars = [bmw, audi, volvo]; 
+cars.forEach(function(car) {
+ 	car.onCspeed', function(text) { 
+		console.log (car.model + " speed is — " + text); 
+	});
+}); 
+
+bmw.emit('speed', '254.5 km'); 
+volvo.emit('speed., '180 km'); 
+
+6---------------------------------------------------------------------------------
+
+var fs = reguire('fs'); 
+
+var file_readed = fs.readFileSync('text.txt', 'utf8'); //fs.readFile('text.txt', 'utf8'); 
+var message = file_readed; 
+fs.writeFileSynd('some_new_file.txt', message); 
+mkdir 
+rmdir
+
+8---------------------------------------------------------------------------------
+
+var http = require('http'); 
+var server = http.createServer(function(req, res) {// request (запрос) и response (ответ).
+	console.log("URL : " + req.url); 
+	res.writeHead(200, {'content—Type': 'text/html; charset=utf-8'}); 
+	var myReadShort = fs.createReadStream( dirname + '/index.html', 'utf8');}); 
+	myReadShort. pipe( res); 
+});
+
+server.listen(3000, '127.0.0.1');
+console.log("Мы отслеживаем порт 3000"); 
+
+10---------------------------------------------------------------------------------
+
+var http = require('http'); 
+var server = http.createServer(function(req, res) {// request (запрос) и response (ответ).
+	console.log("URL : " + req.url); 
+	res.writeHead(200, {'content—Type': 'text/html; charset=utf-8'}); // application/json
+	var myReadShort = fs.createReadStream( dirname + '/index.html', 'utf8');}); 
+	var obj = { 	model: 'Audi',
+			speed: '234.5', 
+			wheels: 4 };
+	myReadShort. pipe( res); //res.end(JSON.stringify(obj));
+});
+
+server.listen(3000, '127.0.0.1');
+console.log("Мы отслеживаем порт 3000"); 
+
+11---------------------------------------------------------------------------------
+
+var server = http.createServer(function(req, res) {
+	// В req.url находится текущий адрес страницы
+	if (req.url === '/') {
+		res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
+		fs.createReadStream(__dirname + '/index.html').pipe(res);
+	} else if (req.url === '/news/best/articles') {
+		res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
+		fs.createReadStream(__dirname + '/news-best.html').pipe(res);
+	}
+});
+
+npm install express -save
+npm uninstall express
+
+npm init //package.json
+
+12---------------------------------------------------------------------------------
+
+app.get('/', function(req, res) {
+	res.send('This is index');
+});
+app.get('/news/:id/:id2', function(req, res) {
+	res.send('This is ' + req.params.id + ' in ' + req.params.id2);
+});
+
+13---------------------------------------------------------------------------------
+
+npm install ejs
+
+app.set('view engine', 'ejs');
+
+app.get('/', function(req, res) {
+	res.sendFile(__dirname + "/about.html");
+});
+
+14---------------------------------------------------------------------------------
+
+app.set('view engine', 'ejs');
+app.get('/news/:id', function(req, res) {
+var obj = {title:"News", id : 4, paragraphs['paragraphs',99,'numbers : 2 4 6']};
+	res.render('news',{newsId:req.params.id, newParam:123 ,obj});//<%=newsId%><%=newParam%><%=obj.title%>
+});
+
+<ul>
+	<%=obj.paragraphs.forEach(function(item) {%>
+		<li><%= item %></li>
+	<%= }); %>
+</ul>
+
+15---------------------------------------------------------------------------------
+
+<% include header.ejs %>
+
+css
+app.use('/public',express.static('public'));
+href='/public/css/style.css'
+
+16---------------------------------------------------------------------------------
+
+npm install body-parser
+var bodyParser=required('body-parser');
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
+
+app.get('/',urlencodedParser , function(req, res) {//name="name"
+
+	// Если данные не переданы, то возвращаем ошибку
+	if (!req.body) return res.sendStatus(400);
+	// Все данные из формы сохраняются в req.body
+	console.log(req.body);
+	// Можем вывести другую страницу и передать в нее все данные
+	res.render('success', {data: req.body});
+}
+
+17---------------------------------------------------------------------------------
+
+app.get('/news/:id/:id2', function(req, res) {
+	//GET request
+	req.query //dict type
+	res.send('This is ' + req.params.id + ' in ' + req.params.id2);
+});
