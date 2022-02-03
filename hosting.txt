@@ -1,0 +1,48 @@
+/lib/systemd/system project.service
+systemctl daemon-reload
+systemctl status project
+systemctl enable project
+
+[Unit]
+Description=Telegram bot
+
+[Service]
+Type=simple
+ExecStart=/bin/sh -c '/var/www/django/telebot-kv.kz/bin/python /var/www/django/telebot-kv.kz/project/bot.py'
+ExecReload=/bin/sh -c '/var/www/django/telebot-kv.kz/bin/python /var/www/django/telebot-kv.kz/project/bot.py'
+WorkingDirectory=/var/www/django/telebot-kv.kz/
+Environment=PATH=/var/www/django/telebot-kv.kz/bin
+KillMode=process
+Restart=always
+TimeoutSec=5
+
+[Install]
+WantedBy=multi-user.target
+
+crontab -e
+
+[uwsgi]
+
+plugins         = python3
+# Django-related settings
+# the base directory (full path)
+chdir           = /var/www/django/telebot-kv.kz/project
+# Django's wsgi file
+module          = project.wsgi:application
+# the virtualenv (full path)
+home            = /var/www/django/telebot-kv.kz
+
+# process-related settings
+# master
+master          = true
+# maximum number of worker processes
+processes       = 1
+# the socket (use the full path to be safe
+socket          = /var/www/django/telebot-kv.kz/nginx.sock
+chmod-socket    = 664
+# clear environment on exit
+vacuum          = true
+# respawn processes taking more than 20 seconds
+#harakiri       = 20
+# respawn processes after serving 5000 requests
+max-requests    = 5000
