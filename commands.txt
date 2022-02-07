@@ -24,6 +24,10 @@ php artisan make:model Model -m
 
 php artisan migrate:fresh --seed
 
+
+php artisan vendor:publish --tag=laravel-assets --ansi --force
+
+
 https://laravel.demiart.ru/guide-to-roles-and-permissions/
 https://webstool.ru/zagruzka-izobrazheniya-v-laravel.html
 https://laravel-news.com/laravel-5-4-key-too-long-error
