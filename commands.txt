@@ -22,6 +22,7 @@ php artisan ui react --auth
 
 php artisan make:model Model -m
 php artisan make:migration create_users_permissions_table
+php artisan migrate:fresh --path=/database/migrations/fileName.php
 
 php artisan migrate:fresh --seed
 
