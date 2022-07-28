@@ -25,6 +25,7 @@ php artisan make:migration create_users_permissions_table
 php artisan migrate --path=/database/migrations/fileName.php
 
 php artisan migrate:fresh --seed
+php artisan db:seed --class=UserSeeder
 
 
 php artisan vendor:publish --tag=laravel-assets --ansi --force
