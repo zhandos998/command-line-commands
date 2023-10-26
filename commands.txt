@@ -45,6 +45,8 @@ django-admin startproject ProjectName
 python manage.py runserver
 python manage.py makemigrations
 python manage.py migrate
+python manage.py makemessages --all
+python manage.py compilemessages
 
 --hosting--
 /lib/systemd/system project.service
