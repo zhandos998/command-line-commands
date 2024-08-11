@@ -24,6 +24,9 @@ php artisan make:model Model -m
 php artisan make:migration create_users_permissions_table
 php artisan migrate --path=/database/migrations/fileName.php
 
+# Создать модель, миграцию, фабрику, наполнитель, политику, контроллер и запрос формы ...
+php artisan make:model Model --all
+
 php artisan migrate:fresh --seed
 php artisan db:seed --class=UserSeeder
 
