@@ -36,12 +36,13 @@ php artisan vendor:publish --tag=laravel-assets --ansi --force
 php composer.phar require laravelcollective/html
 php artisan storage:link
 
+php artisan l5-swagger:generate
+
 php artisan config:cache
 php artisan route:cache
 php artisan view:cache
 php artisan cache:clear
 
-php artisan l5-swagger:generate
 
 https://laravel.demiart.ru/guide-to-roles-and-permissions/
 https://webstool.ru/zagruzka-izobrazheniya-v-laravel.html
