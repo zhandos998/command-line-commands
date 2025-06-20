@@ -43,6 +43,8 @@ php artisan route:cache
 php artisan view:cache
 php artisan cache:clear
 
+alias artclear="php artisan route:clear && php artisan config:clear && php artisan cache:clear && php artisan view:clear"
+artclear
 
 https://laravel.demiart.ru/guide-to-roles-and-permissions/
 https://webstool.ru/zagruzka-izobrazheniya-v-laravel.html
