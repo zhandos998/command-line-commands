@@ -52,6 +52,17 @@ https://laravel.demiart.ru/guide-to-roles-and-permissions/
 https://webstool.ru/zagruzka-izobrazheniya-v-laravel.html
 https://laravel-news.com/laravel-5-4-key-too-long-error
 
+--nginx--
+
+sudo nginx -t
+sudo ln -s /etc/nginx/sites-available/teachai.atu.kz /etc/nginx/sites-enabled/
+sudo systemctl status nginx
+sudo systemctl reload nginx
+sudo systemctl restart nginx
+
+tail -f /var/log/nginx/error.log
+tail -f /var/log/nginx/access.log
+
 --npm--
 npm install && npm run dev
 
