@@ -3,6 +3,15 @@ git clone [https://github.com/zhandos998/laravel_shop.git]
 git add [index.html]
 git push
 
+# обновить данные в сервер из гит
+git pull 
+# обновить данные из сервера в гит
+git status
+git add .
+git commit -m "Update from server"
+git push origin main #или git push origin master
+
+
 --Composer--
 php composer.phar install
 php composer.phar global require laravel/installer
